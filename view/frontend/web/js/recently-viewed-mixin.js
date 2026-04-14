@@ -1,14 +1,17 @@
 define(['jquery'], function ($) {
     'use strict';
 
-    var maxItems = 10;
+    function getMaxItems() {
+        return window.recentlyViewedStorageLimit || 10;
+    }
 
     return function (widget) {
         $.widget('mage.recentlyViewedProducts', widget, {
             _create: function () {
                 this._super();
 
-                var products = JSON.parse(window.localStorage.getItem(this.options.localStorageKey));
+                var maxItems = getMaxItems(),
+                    products = JSON.parse(window.localStorage.getItem(this.options.localStorageKey));
 
                 if (products && products.sku && products.sku.length > maxItems) {
                     products.sku = products.sku.slice(0, maxItems);

@@ -1,10 +1,13 @@
 define(['underscore'], function (_) {
     'use strict';
 
-    var maxItems = 10;
+    function getMaxItems() {
+        return window.recentlyViewedStorageLimit || 10;
+    }
 
     function trimToMax(data) {
-        var keys, sorted;
+        var maxItems = getMaxItems(),
+            keys, sorted;
 
         if (!_.isObject(data) || _.isEmpty(data)) {
             return data;
