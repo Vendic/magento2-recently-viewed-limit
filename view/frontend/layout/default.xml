@@ -3,8 +3,7 @@
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="before.body.end">
-            <block class="Magento\Framework\View\Element\Template"
-                   name="recently_viewed_limit_config"
+            <block name="recently_viewed_limit_config"
                    template="Vendic_RecentlyViewedLimit::config.phtml">
                 <arguments>
                     <argument name="view_model" xsi:type="object">Vendic\RecentlyViewedLimit\ViewModel\Config</argument>
