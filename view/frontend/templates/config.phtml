@@ -1,0 +1,14 @@
+<?php
+
+declare(strict_types=1);
+
+use Vendic\RecentlyViewedLimit\ViewModel\Config;
+use Magento\Framework\View\Element\Template;
+
+/** @var Template $block */
+/** @var Config $viewModel */
+$viewModel = $block->getData('view_model');
+?>
+<script>
+    window.recentlyViewedStorageLimit = <?= (int) $viewModel->getStorageLimit() ?>;
+</script>
