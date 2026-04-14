@@ -1,0 +1,19 @@
+{
+    "name": "vendic/magento2-recently-viewed-limit",
+    "description": "Limits the number of recently viewed products stored in localStorage and synced to the backend, preventing unbounded growth that can cause performance degradation and DoS vulnerabilities.",
+    "type": "magento2-module",
+    "license": "MIT",
+    "require": {
+        "php": "^8.1",
+        "magento/module-catalog": "*",
+        "magento/module-reports": "*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Vendic\\RecentlyViewedLimit\\": ""
+        }
+    }
+}
