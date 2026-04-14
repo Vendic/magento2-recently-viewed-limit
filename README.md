@@ -26,29 +26,9 @@ This module caps recently viewed products at **10 items** across three layers:
 The frontend mixins protect regular users from accumulating data. The backend plugin protects the server from direct POST attacks that bypass the browser.
 
 ## Installation
-
-### Via Composer
-
 ```bash
 composer require vendic/magento2-recently-viewed-limit
 bin/magento setup:upgrade
 bin/magento cache:flush
 ```
 
-### Manual
-
-Copy the module files to `app/code/Vendic/RecentlyViewedLimit/` and run:
-
-```bash
-bin/magento setup:upgrade
-bin/magento cache:flush
-```
-
-## Compatibility
-
-- Magento 2.4.x
-- PHP 8.1+
-
-## License
-
-MIT
