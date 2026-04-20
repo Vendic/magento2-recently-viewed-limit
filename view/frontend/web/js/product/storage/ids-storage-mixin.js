@@ -33,6 +33,18 @@ define(['underscore'], function (_) {
             originalHandler.call(this, trimToMax(data));
         };
 
+        idsStorage.cachesDataFromLocalStorage = function () {
+            var data = this.getDataFromLocalStorage(),
+                trimmed = trimToMax(data);
+
+            if (_.keys(data).length !== _.keys(trimmed).length) {
+                window.localStorage.setItem(this.namespace, JSON.stringify(trimmed));
+            }
+
+            this.data(trimmed);
+            return this;
+        };
+
         return idsStorage;
     };
 });
